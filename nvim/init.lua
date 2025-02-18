@@ -1,2 +1,2 @@
-require("yannick.core")
-require("yannick.lazy")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
