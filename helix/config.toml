@@ -1,0 +1,45 @@
+
+theme = "pepew"
+
+[editor]
+  true-color = true
+  line-number = "relative"
+  mouse = false
+[editor.soft-wrap]
+  enable = true
+
+[editor.cursor-shape]
+  insert = "bar"
+  normal = "block"
+  select = "underline"
+
+[editor.file-picker]
+  hidden = false
+
+[editor.statusline]
+  left = ["mode", "spinner"]
+  center = ["file-name"]
+  right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+  separator = "│"
+  mode.normal = "NORMAL"
+  mode.insert = "INSERT"
+  mode.select = "SELECT"
+  diagnostics = ["warning", "error"]
+  workspace-diagnostics = ["warning", "error"]
+
+[editor.indent-guides]
+  render = true
+  character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+  skip-levels = 1
+
+[keys.insert]
+  h = { g = "normal_mode"} # Maps `hg` to exit insert mode
+  
+[keys.normal.m.n]
+  d = '@f"lmi"'
+  q = "@f'lmi'" 
+  # t = "@t>mi>"
+  
+[keys.normal.m.n.a]
+  q = "@f'lma'" 
+  d = '@f"lma"'
