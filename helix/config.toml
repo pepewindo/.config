@@ -1,10 +1,11 @@
-
 theme = "pepew"
 
 [editor]
   true-color = true
   line-number = "relative"
   mouse = false
+  bufferline = "multiple"
+
 [editor.soft-wrap]
   enable = true
 
@@ -32,14 +33,25 @@ theme = "pepew"
   character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
   skip-levels = 1
 
-[keys.insert]
-  h = { g = "normal_mode"} # Maps `hg` to exit insert mode
-  
+[keys.normal]
+  "{" = "goto_prev_paragraph"
+  "}" = "goto_next_paragraph"
+
+[keys.select]
+  "{" = "goto_prev_paragraph"
+  "}" = "goto_next_paragraph"
+
+[keys.normal.g]
+  "," = "goto_line_end"
+
+[keys.select.g]
+  "," = "goto_line_end"
+
 [keys.normal.m.n]
   d = '@f"lmi"'
   q = "@f'lmi'" 
   # t = "@t>mi>"
-  
+
 [keys.normal.m.n.a]
   q = "@f'lma'" 
   d = '@f"lma"'
