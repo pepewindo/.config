@@ -6,6 +6,13 @@ theme = "pepew"
   line-number = "relative"
   mouse       = true
   bufferline  = "multiple"
+  end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+  cursor-line = "warning"
+
+[editor.lsp]
+  display-inlay-hints = true
 
 [editor.soft-wrap]
   enable = true
