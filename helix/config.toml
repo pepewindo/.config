@@ -1,10 +1,11 @@
 theme = "pepew"
 
 [editor]
-  true-color = true
+  color-modes = true
+  true-color  = true
   line-number = "relative"
-  mouse = false
-  bufferline = "multiple"
+  mouse       = true
+  bufferline  = "multiple"
 
 [editor.soft-wrap]
   enable = true
@@ -22,20 +23,24 @@ theme = "pepew"
   center = ["file-name"]
   right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
   separator = "│"
-  mode.normal = "NORMAL"
-  mode.insert = "INSERT"
-  mode.select = "SELECT"
+  # mode.normal = "NORMAL"
+  # mode.insert = "INSERT"
+  # mode.select = "SELECT"
   diagnostics = ["warning", "error"]
   workspace-diagnostics = ["warning", "error"]
 
 [editor.indent-guides]
   render = true
-  character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+  character = "┊" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
   skip-levels = 1
 
 [keys.normal]
-  "{" = "goto_prev_paragraph"
-  "}" = "goto_next_paragraph"
+  C-left  = "jump_view_left"
+  C-right = "jump_view_right"
+  C-up    = "jump_view_up"
+  C-down  = "jump_view_down"
+  "{"     = "goto_prev_paragraph"
+  "}"     = "goto_next_paragraph"
 
 [keys.select]
   "{" = "goto_prev_paragraph"
