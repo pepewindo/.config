@@ -1,10 +1,10 @@
-theme = "pepew"
+theme = "pepew" # tokyonight_storm with highlighted primary selection
 
 [editor]
   color-modes = true
   true-color  = true
-  line-number = "relative"
   mouse       = true
+  line-number = "relative"
   bufferline  = "multiple"
   end-of-line-diagnostics = "hint"
 
@@ -29,7 +29,7 @@ theme = "pepew"
   left = ["mode", "spinner"]
   center = ["file-name"]
   right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-  separator = "│"
+  separator = "|"
   # mode.normal = "NORMAL"
   # mode.insert = "INSERT"
   # mode.select = "SELECT"
@@ -38,32 +38,41 @@ theme = "pepew"
 
 [editor.indent-guides]
   render = true
-  character = "┊" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+  character = "¦"
   skip-levels = 1
 
 [keys.normal]
-  C-left  = "jump_view_left"
+  C-left = "jump_view_left"
   C-right = "jump_view_right"
-  C-up    = "jump_view_up"
-  C-down  = "jump_view_down"
-  "{"     = "goto_prev_paragraph"
-  "}"     = "goto_next_paragraph"
+  C-up = "jump_view_up"
+  C-down = "jump_view_down"
+  A-z = "rotate_selection_contents_backward"
+  A-v = "rotate_selection_contents_forward"
+  A-l = "repeat_last_motion"
+  A-r = "flip_selections"
+  A-t = "ensure_selections_forward"
+  "}" = "goto_next_paragraph"
+  "{" = "goto_prev_paragraph"
+  "X" = "select_line_above"
+
+[keys.insert]
+  C-right = "move_next_word_start"
+  C-left  = "move_prev_word_end"
 
 [keys.select]
-  "{" = "goto_prev_paragraph"
   "}" = "goto_next_paragraph"
+  "{" = "goto_prev_paragraph"
+  "X" = "select_line_above"
 
 [keys.normal.g]
   "," = "goto_line_end"
-
 [keys.select.g]
   "," = "goto_line_end"
-
+  
 [keys.normal.m.n]
-  d = '@f"lmi"'
-  q = "@f'lmi'" 
-  # t = "@t>mi>"
+  q = "@f'lmi'" # select next inside single-quotes
+  d = '@f"lmi"' # select next inside double-quotes
 
 [keys.normal.m.n.a]
-  q = "@f'lma'" 
-  d = '@f"lma"'
+  q = "@f'lma'" # select next around single-quotes
+  d = '@f"lma"' # select next around double-quotes
