@@ -56,8 +56,9 @@ theme = "pepew" # tokyonight_storm with highlighted primary selection
   "X" = "select_line_above"
 
 [keys.insert]
-  C-right = "move_next_word_start"
-  C-left  = "move_prev_word_end"
+  C-backspace = "delete_word_backward"
+  C-right     = "move_next_word_start"
+  C-left      = "move_prev_word_end"
 
 [keys.select]
   "}" = "goto_next_paragraph"
@@ -76,3 +77,6 @@ theme = "pepew" # tokyonight_storm with highlighted primary selection
 [keys.normal.m.n.a]
   q = "@f'lma'" # select next around single-quotes
   d = '@f"lma"' # select next around double-quotes
+
+[keys.normal."space"]
+  u = ":reset-diff-change"
